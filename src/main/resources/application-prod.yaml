@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: ${DATABASE_URL}
+    url: ${DATABASE_PUBLIC_URL}
     username: ${PGUSER}
     password: ${PGPASSWORD}
 
