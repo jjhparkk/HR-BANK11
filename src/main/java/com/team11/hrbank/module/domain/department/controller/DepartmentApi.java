@@ -89,7 +89,7 @@ public interface DepartmentApi {
       @RequestParam(required = false) String cursor,
 
       @Parameter(description = "페이지 크기 (기본값: 10)")
-      @RequestParam(required = false, defaultValue = "10") int size,
+      @RequestParam(required = false, defaultValue = "10") Integer size,
 
       @Parameter(description = "정렬 필드 (name 또는 establishedDate)")
       @RequestParam(required = false, defaultValue = "establishedDate") String sortField,

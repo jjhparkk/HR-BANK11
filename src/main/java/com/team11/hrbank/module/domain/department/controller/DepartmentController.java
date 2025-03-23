@@ -47,7 +47,7 @@ public class DepartmentController implements DepartmentApi {
       @RequestParam(required = false) String nameOrDescription,
       @RequestParam(required = false) Long idAfter,
       @RequestParam(required = false) String cursor,
-      @RequestParam(required = false, defaultValue = "10") int size,
+      @RequestParam(required = false, defaultValue = "10") Integer size,
       @RequestParam(required = false, defaultValue = "establishedDate") String sortField,
       @RequestParam(required = false, defaultValue = "asc") String sortDirection) {
 
