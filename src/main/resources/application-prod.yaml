@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${DATABASE_PUBLIC_URL}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 1
+
+  jpa:
+    show-sql: false
+
+logging:
+  level:
+    org.hibernate: INFO
+    com.hrbank: INFO

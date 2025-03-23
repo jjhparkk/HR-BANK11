@@ -1,0 +1,58 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: hr-bank
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  sql:
+    init:
+      mode: never
+      schema-locations: classpath:schema.sql
+
+file:
+  storage:
+    root-path: ./storage/files
+    profile-images: ./storage/files/profiles
+    backup-files: ./storage/files/backups
+    error-logs: ./storage/files/logs
+
+# 백업 스케줄 설정
+backup:
+  schedule:
+    cron: "0 0 * * * *"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    display-request-duration: true
+  api-docs:
+    path: /api-docs
+  show-actuator: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.hrbank: INFO
+#    org.hibernate.engine.jdbc.spi.SqlStatementLogger: DEBUG
+#    org.hibernate.engine.transaction.internal.TransactionImpl: DEBUG
+#    com.zaxxer.hikari: DEBUG
+#  file:
+#    name: ./storage/files/logs/application.log
